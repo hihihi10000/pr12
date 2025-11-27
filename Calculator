@@ -1,0 +1,42 @@
+using System;
+
+public class Calculator
+{
+    public static double Add(double a, double b)
+    {
+        return a + b;
+    }
+
+    public static double Subtract(double a, double b)
+    {
+        return a - b;
+    }
+
+    public static double Multiply(double a, double b)
+    {
+        return a * b;
+    }
+
+    public static double Divide(double a, double b)
+    {
+        if (b == 0)
+        {
+            Console.WriteLine("Ошибка: деление на ноль!");
+            return 0;
+        }
+        return a / b;
+    }
+
+    static void Main()
+    {
+        double x = 10;
+        double y = 5;
+        
+        Console.WriteLine($"{x} + {y} = {Add(x, y)}");
+        Console.WriteLine($"{x} - {y} = {Subtract(x, y)}");
+        Console.WriteLine($"{x} * {y} = {Multiply(x, y)}");
+        Console.WriteLine($"{x} / {y} = {Divide(x, y)}");
+        
+        Console.WriteLine($"{x} / 0 = {Divide(x, 0)}");
+    }
+}
