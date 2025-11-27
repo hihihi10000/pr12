@@ -1,0 +1,38 @@
+using System;
+
+public class Book
+{
+    private readonly string isbn;
+    public string Title { get; set; }
+    public string Author { get; set; }
+
+    public string ISBN
+    {
+        get { return isbn; }
+    }
+
+    public Book(string isbn, string title, string author)
+    {
+        this.isbn = isbn;
+        Title = title;
+        Author = author;
+    }
+
+    public void ShowInfo()
+    {
+        Console.WriteLine($"Книга: {Title}");
+        Console.WriteLine($"Автор: {Author}");
+        Console.WriteLine($"ISBN: {ISBN}");
+    }
+
+    static void Main()
+    {
+        Book book = new Book("978-5-699-12014-7", "Мастер и Маргарита", "Михаил Булгаков");
+        book.ShowInfo();
+
+        book.Title = "Новое название";
+        book.Author = "Новый автор";
+        // book.ISBN = "123-456-789"; // Ошибка компиляции - поле readonly
+        book.ShowInfo();
+    }
+}
